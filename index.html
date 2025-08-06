@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de Dados - Módulo I - Prof. William Mendes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Estrutura de Dados - Módulo I</h1>
+        <h2>Prof. William Mendes</h2>
+        <h3>Curso de Análise e Desenvolvimento de Sistemas - EDUFOR</h3>
+        <nav>
+            <ul>
+                <li><a href="#strings">Strings</a></li>
+                <li><a href="#vetores">Vetores</a></li>
+                <li><a href="#matrizes">Matrizes</a></li>
+                <li><a href="#simuladores">Simuladores</a></li>
+                <li><a href="#exemplos-codigo">Exemplos de Código</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="strings">
+            <h2>Manipulação de Strings</h2>
+            <div class="content-section">
+                <h3>O que são Strings?</h3>
+                <p>Cadeias de caracteres (strings) são sequências de caracteres que representam texto. Em muitas linguagens, são implementadas como arrays de caracteres.</p>
+                
+                <h3>Operações Fundamentais</h3>
+                <div class="operations-grid">
+                    <div class="operation-card">
+                        <h4>Concatenação</h4>
+                        <p>Juntar duas ou mais strings em uma única string.</p>
+                    </div>
+                    <div class="operation-card">
+                        <h4>Extração</h4>
+                        <p>Obter uma parte específica de uma string (substring).</p>
+                    </div>
+                    <div class="operation-card">
+                        <h4>Busca</h4>
+                        <p>Encontrar a posição de um caractere ou substring.</p>
+                    </div>
+                    <div class="operation-card">
+                        <h4>Substituição</h4>
+                        <p>Trocar caracteres ou substrings por outros valores.</p>
+                    </div>
+                </div>
+
+                <h3>Aplicações Práticas</h3>
+                <ul>
+                    <li>Processamento de texto</li>
+                    <li>Compiladores</li>
+                    <li>Desenvolvimento web</li>
+                    <li>Busca e indexação</li>
+                </ul>
+
+                <h3>Desafios Comuns</h3>
+                <div class="challenges">
+                    <p><strong>Estouro de Buffer:</strong> Quando uma string excede o tamanho alocado.</p>
+                    <p><strong>Eficiência:</strong> Operações com strings grandes podem ser custosas.</p>
+                </div>
+            </div>
+            
+            <div class="simulator-container">
+                <h3>Simulador de Strings</h3>
+                <input type="text" id="stringInput" placeholder="Digite uma string">
+                <div class="simulator-buttons">
+                    <button onclick="runStringSimulator()">Executar Simulador</button>
+                    <button onclick="demonstrateStringOperations()" class="example-btn">Exemplo</button>
+                </div>
+                <p id="stringOutput"></p>
+            </div>
+            
+            <div class="code-examples-container">
+                <h3>Exemplos de Código (Strings)</h3>
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="showCode('strings-portugol')">Portugol</button>
+                    <button class="tab-button" onclick="showCode('strings-python')">Python</button>
+                    <button class="tab-button" onclick="showCode('strings-java')">Java</button>
+                    <button class="tab-button" onclick="showCode('strings-c')">C</button>
+                </div>
+                <div id="strings-portugol" class="code-tab active">
+                    <pre><code>algoritmo "ManipulacaoStrings"
+var
+    nome: cadeia
+    sobrenome: cadeia
+    nomeCompleto: cadeia
+inicio
+    escreva("Digite o nome: ")
+    leia(nome)
+    escreva("Digite o sobrenome: ")
+    leia(sobrenome)
+    
+    // Concatenação
+    nomeCompleto <- nome + " " + sobrenome
+    escreva("Nome completo: ", nomeCompleto)
+    
+    // Tamanho da string
+    escreva("Tamanho: ", compr(nomeCompleto))
+fimalgoritmo</code></pre>
+                </div>
+                <div id="strings-python" class="code-tab">
+                    <pre><code class="language-python"># Manipulação de Strings em Python
+nome = input("Digite o nome: ")
+sobrenome = input("Digite o sobrenome: ")
+
+# Concatenação
+nome_completo = nome + " " + sobrenome
+print(f"Nome completo: {nome_completo}")
+
+# Tamanho da string
+print(f"Tamanho: {len(nome_completo)}")
+
+# Operações úteis
+print(f"Maiúsculo: {nome_completo.upper()}")
+print(f"Minúsculo: {nome_completo.lower()}")
+print(f"Primeira letra maiúscula: {nome_completo.title()}")</code></pre>
+                </div>
+                <div id="strings-java" class="code-tab">
+                    <pre><code class="language-java">// Manipulação de Strings em Java
+import java.util.Scanner;
+
+public class ManipulacaoStrings {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite o nome: ");
+        String nome = scanner.nextLine();
+        
+        System.out.print("Digite o sobrenome: ");
+        String sobrenome = scanner.nextLine();
+        
+        // Concatenação
+        String nomeCompleto = nome + " " + sobrenome;
+        System.out.println("Nome completo: " + nomeCompleto);
+        
+        // Tamanho da string
+        System.out.println("Tamanho: " + nomeCompleto.length());
+        
+        // Operações úteis
+        System.out.println("Maiúsculo: " + nomeCompleto.toUpperCase());
+        System.out.println("Minúsculo: " + nomeCompleto.toLowerCase());
+    }
+}</code></pre>
+                </div>
+                <div id="strings-c" class="code-tab">
+                    <pre><code class="language-c">// Manipulação de Strings em C
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char nome[50];
+    char sobrenome[50];
+    char nomeCompleto[100];
+    
+    printf("Digite o nome: ");
+    scanf("%s", nome);
+    
+    printf("Digite o sobrenome: ");
+    scanf("%s", sobrenome);
+    
+    // Concatenação
+    strcpy(nomeCompleto, nome);
+    strcat(nomeCompleto, " ");
+    strcat(nomeCompleto, sobrenome);
+    
+    printf("Nome completo: %s\n", nomeCompleto);
+    printf("Tamanho: %lu\n", strlen(nomeCompleto));
+    
+    return 0;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="vetores">
+            <h2>Vetores</h2>
+            <div class="content-section">
+                <h3>O que são Vetores?</h3>
+                <p>Vetores (arrays unidimensionais) são estruturas que armazenam elementos do mesmo tipo em posições de memória contíguas, acessados por índices numéricos.</p>
+                
+                <div class="vector-visual">
+                    <div class="vector-element">85</div>
+                    <div class="vector-element">92</div>
+                    <div class="vector-element">78</div>
+                    <div class="vector-element">95</div>
+                    <div class="vector-element">88</div>
+                </div>
+                <div class="vector-indices">
+                    <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                </div>
+
+                <h3>Características</h3>
+                <div class="characteristics-grid">
+                    <div class="characteristic-card">
+                        <h4>Homogeneidade</h4>
+                        <p>Todos os elementos são do mesmo tipo</p>
+                    </div>
+                    <div class="characteristic-card">
+                        <h4>Tamanho Fixo</h4>
+                        <p>Definido na declaração</p>
+                    </div>
+                    <div class="characteristic-card">
+                        <h4>Acesso Direto</h4>
+                        <p>Complexidade O(1)</p>
+                    </div>
+                    <div class="characteristic-card">
+                        <h4>Índices</h4>
+                        <p>De 0 a n-1</p>
+                    </div>
+                </div>
+
+                <h3>Operações Comuns</h3>
+                <ul>
+                    <li><strong>Inserção:</strong> Adicionar elementos</li>
+                    <li><strong>Busca:</strong> Encontrar elementos</li>
+                    <li><strong>Remoção:</strong> Excluir elementos</li>
+                    <li><strong>Ordenação:</strong> Organizar elementos</li>
+                </ul>
+
+                <h3>Aplicações</h3>
+                <div class="applications">
+                    <span class="app-tag">Tabelas</span>
+                    <span class="app-tag">Listas</span>
+                    <span class="app-tag">Estatísticas</span>
+                    <span class="app-tag">Imagens</span>
+                </div>
+
+                <h3>Limitações</h3>
+                <div class="limitations">
+                    <p><strong>Tamanho Fixo:</strong> Difícil redimensionar</p>
+                    <p><strong>Inserções/Remoções:</strong> Custosas no meio do vetor</p>
+                </div>
+            </div>
+            
+            <div class="simulator-container">
+                <h3>Simulador de Vetores</h3>
+                <input type="text" id="vectorInput" placeholder="Digite números separados por vírgula">
+                <div class="simulator-buttons">
+                    <button onclick="runVectorSimulator()">Executar Simulador</button>
+                    <button onclick="demonstrateVectorOperations()" class="example-btn">Exemplo</button>
+                </div>
+                <p id="vectorOutput"></p>
+            </div>
+            
+            <div class="code-examples-container">
+                <h3>Exemplos de Código (Vetores)</h3>
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="showCode('vetores-portugol')">Portugol</button>
+                    <button class="tab-button" onclick="showCode('vetores-python')">Python</button>
+                    <button class="tab-button" onclick="showCode('vetores-java')">Java</button>
+                    <button class="tab-button" onclick="showCode('vetores-c')">C</button>
+                </div>
+                <div id="vetores-portugol" class="code-tab active">
+                    <pre><code>algoritmo "ManipulacaoVetores"
+var
+    notas: vetor[0..4] de real
+    soma: real
+    i: inteiro
+inicio
+    // Lendo as notas
+    para i de 0 ate 4 faca
+        escreva("Digite a nota ", i+1, ": ")
+        leia(notas[i])
+    fimpara
+    
+    // Calculando a soma
+    soma <- 0
+    para i de 0 ate 4 faca
+        soma <- soma + notas[i]
+    fimpara
+    
+    escreva("Média: ", soma/5)
+fimalgoritmo</code></pre>
+                </div>
+                <div id="vetores-python" class="code-tab">
+                    <pre><code class="language-python"># Manipulação de Vetores em Python
+notas = []
+
+# Lendo as notas
+for i in range(5):
+    nota = float(input(f"Digite a nota {i+1}: "))
+    notas.append(nota)
+
+# Calculando estatísticas
+media = sum(notas) / len(notas)
+maior_nota = max(notas)
+menor_nota = min(notas)
+
+print(f"Notas: {notas}")
+print(f"Média: {media:.2f}")
+print(f"Maior nota: {maior_nota}")
+print(f"Menor nota: {menor_nota}")
+
+# Ordenando as notas
+notas_ordenadas = sorted(notas)
+print(f"Notas ordenadas: {notas_ordenadas}")</code></pre>
+                </div>
+                <div id="vetores-java" class="code-tab">
+                    <pre><code class="language-java">// Manipulação de Vetores em Java
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class ManipulacaoVetores {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double[] notas = new double[5];
+        double soma = 0;
+        
+        // Lendo as notas
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Digite a nota " + (i+1) + ": ");
+            notas[i] = scanner.nextDouble();
+            soma += notas[i];
+        }
+        
+        // Calculando estatísticas
+        double media = soma / notas.length;
+        double maiorNota = Arrays.stream(notas).max().orElse(0);
+        double menorNota = Arrays.stream(notas).min().orElse(0);
+        
+        System.out.println("Notas: " + Arrays.toString(notas));
+        System.out.printf("Média: %.2f%n", media);
+        System.out.println("Maior nota: " + maiorNota);
+        System.out.println("Menor nota: " + menorNota);
+        
+        // Ordenando as notas
+        Arrays.sort(notas);
+        System.out.println("Notas ordenadas: " + Arrays.toString(notas));
+    }
+}</code></pre>
+                </div>
+                <div id="vetores-c" class="code-tab">
+                    <pre><code class="language-c">// Manipulação de Vetores em C
+#include &lt;stdio.h&gt;
+
+int main() {
+    float notas[5];
+    float soma = 0;
+    float maior, menor;
+    int i;
+    
+    // Lendo as notas
+    for (i = 0; i < 5; i++) {
+        printf("Digite a nota %d: ", i+1);
+        scanf("%f", &notas[i]);
+        soma += notas[i];
+    }
+    
+    // Encontrando maior e menor
+    maior = menor = notas[0];
+    for (i = 1; i < 5; i++) {
+        if (notas[i] > maior) maior = notas[i];
+        if (notas[i] < menor) menor = notas[i];
+    }
+    
+    // Exibindo resultados
+    printf("Média: %.2f\n", soma/5);
+    printf("Maior nota: %.2f\n", maior);
+    printf("Menor nota: %.2f\n", menor);
+    
+    return 0;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="matrizes">
+            <h2>Matrizes</h2>
+            <div class="content-section">
+                <h3>O que são Matrizes?</h3>
+                <p>Matrizes (arrays bidimensionais) são estruturas que organizam dados em linhas e colunas, formando uma tabela. São acessadas por dois índices: linha e coluna.</p>
+                
+                <div class="matrix-visual">
+                    <div class="matrix-row">
+                        <div class="matrix-element">X</div>
+                        <div class="matrix-element">O</div>
+                        <div class="matrix-element">X</div>
+                    </div>
+                    <div class="matrix-row">
+                        <div class="matrix-element">O</div>
+                        <div class="matrix-element">X</div>
+                        <div class="matrix-element">O</div>
+                    </div>
+                    <div class="matrix-row">
+                        <div class="matrix-element">X</div>
+                        <div class="matrix-element">O</div>
+                        <div class="matrix-element">X</div>
+                    </div>
+                </div>
+
+                <h3>Características</h3>
+                <div class="characteristics-grid">
+                    <div class="characteristic-card">
+                        <h4>Bidimensional</h4>
+                        <p>Organizada em linhas e colunas</p>
+                    </div>
+                    <div class="characteristic-card">
+                        <h4>Homogeneidade</h4>
+                        <p>Todos os elementos do mesmo tipo</p>
+                    </div>
+                    <div class="characteristic-card">
+                        <h4>Acesso</h4>
+                        <p>matriz[i][j]</p>
+                    </div>
+                    <div class="characteristic-card">
+                        <h4>Tamanho Fixo</h4>
+                        <p>Definido na declaração</p>
+                    </div>
+                </div>
+
+                <h3>Operações Comuns</h3>
+                <ul>
+                    <li><strong>Percorrer:</strong> Usar loops aninhados</li>
+                    <li><strong>Buscar:</strong> Encontrar elementos específicos</li>
+                    <li><strong>Somar:</strong> Calcular soma de linhas/colunas</li>
+                    <li><strong>Transpor:</strong> Trocar linhas por colunas</li>
+                </ul>
+
+                <h3>Aplicações</h3>
+                <div class="applications">
+                    <span class="app-tag">Jogos</span>
+                    <span class="app-tag">Imagens</span>
+                    <span class="app-tag">Planilhas</span>
+                    <span class="app-tag">Gráficos</span>
+                    <span class="app-tag">Matemática</span>
+                </div>
+
+                <h3>Exemplo Prático</h3>
+                <div class="practical-example">
+                    <p><strong>Jogo da Velha:</strong> Uma matriz 3x3 pode representar o tabuleiro, onde cada posição armazena 'X', 'O' ou espaço vazio.</p>
+                </div>
+            </div>
+            
+            <div class="simulator-container">
+                <h3>Simulador de Matrizes</h3>
+                <textarea id="matrixInput" placeholder="Digite a matriz (ex: 1,2,3\n4,5,6)"></textarea>
+                <div class="simulator-buttons">
+                    <button onclick="runMatrixSimulator()">Executar Simulador</button>
+                    <button onclick="demonstrateMatrixOperations()" class="example-btn">Exemplo</button>
+                </div>
+                <p id="matrixOutput"></p>
+            </div>
+            
+            <div class="code-examples-container">
+                <h3>Exemplos de Código (Matrizes)</h3>
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="showCode('matrizes-portugol')">Portugol</button>
+                    <button class="tab-button" onclick="showCode('matrizes-python')">Python</button>
+                    <button class="tab-button" onclick="showCode('matrizes-java')">Java</button>
+                    <button class="tab-button" onclick="showCode('matrizes-c')">C</button>
+                </div>
+                <div id="matrizes-portugol" class="code-tab active">
+                    <pre><code>algoritmo "ManipulacaoMatrizes"
+var
+    matriz: vetor[0..2, 0..2] de inteiro
+    i, j: inteiro
+    soma: inteiro
+inicio
+    // Preenchendo a matriz
+    para i de 0 ate 2 faca
+        para j de 0 ate 2 faca
+            escreva("Digite o elemento [", i, "][", j, "]: ")
+            leia(matriz[i, j])
+        fimpara
+    fimpara
+    
+    // Calculando a soma total
+    soma <- 0
+    para i de 0 ate 2 faca
+        para j de 0 ate 2 faca
+            soma <- soma + matriz[i, j]
+        fimpara
+    fimpara
+    
+    escreva("Soma total: ", soma)
+fimalgoritmo</code></pre>
+                </div>
+                <div id="matrizes-python" class="code-tab">
+                    <pre><code class="language-python"># Manipulação de Matrizes em Python
+import numpy as np
+
+# Criando uma matriz 3x3
+matriz = []
+print("Digite os elementos da matriz 3x3:")
+for i in range(3):
+    linha = []
+    for j in range(3):
+        elemento = int(input(f"Elemento [{i}][{j}]: "))
+        linha.append(elemento)
+    matriz.append(linha)
+
+# Exibindo a matriz
+print("\nMatriz:")
+for linha in matriz:
+    print(linha)
+
+# Calculando estatísticas
+soma_total = sum(sum(linha) for linha in matriz)
+print(f"\nSoma total: {soma_total}")
+
+# Soma das linhas
+for i, linha in enumerate(matriz):
+    print(f"Soma da linha {i}: {sum(linha)}")
+
+# Soma das colunas
+for j in range(3):
+    soma_coluna = sum(matriz[i][j] for i in range(3))
+    print(f"Soma da coluna {j}: {soma_coluna}")
+
+# Diagonal principal
+diagonal = [matriz[i][i] for i in range(3)]
+print(f"Diagonal principal: {diagonal}")
+print(f"Soma da diagonal: {sum(diagonal)}")</code></pre>
+                </div>
+                <div id="matrizes-java" class="code-tab">
+                    <pre><code class="language-java">// Manipulação de Matrizes em Java
+import java.util.Scanner;
+
+public class ManipulacaoMatrizes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[][] matriz = new int[3][3];
+        int somaTotal = 0;
+        
+        // Preenchendo a matriz
+        System.out.println("Digite os elementos da matriz 3x3:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print("Elemento [" + i + "][" + j + "]: ");
+                matriz[i][j] = scanner.nextInt();
+                somaTotal += matriz[i][j];
+            }
+        }
+        
+        // Exibindo a matriz
+        System.out.println("\nMatriz:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
+        System.out.println("Soma total: " + somaTotal);
+        
+        // Soma das linhas
+        for (int i = 0; i < 3; i++) {
+            int somaLinha = 0;
+            for (int j = 0; j < 3; j++) {
+                somaLinha += matriz[i][j];
+            }
+            System.out.println("Soma da linha " + i + ": " + somaLinha);
+        }
+        
+        // Soma das colunas
+        for (int j = 0; j < 3; j++) {
+            int somaColuna = 0;
+            for (int i = 0; i < 3; i++) {
+                somaColuna += matriz[i][j];
+            }
+            System.out.println("Soma da coluna " + j + ": " + somaColuna);
+        }
+        
+        // Diagonal principal
+        int somaDiagonal = 0;
+        for (int i = 0; i < 3; i++) {
+            somaDiagonal += matriz[i][i];
+        }
+        System.out.println("Soma da diagonal principal: " + somaDiagonal);
+    }
+}</code></pre>
+                </div>
+                <div id="matrizes-c" class="code-tab">
+                    <pre><code class="language-c">// Manipulação de Matrizes em C
+#include &lt;stdio.h&gt;
+
+int main() {
+    int matriz[3][3];
+    int i, j;
+    int somaTotal = 0;
+    
+    // Preenchendo a matriz
+    printf("Digite os elementos da matriz 3x3:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+            somaTotal += matriz[i][j];
+        }
+    }
+    
+    // Exibindo a matriz
+    printf("\nMatriz:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+    
+    printf("Soma total: %d\n", somaTotal);
+    
+    // Soma das linhas
+    for (i = 0; i < 3; i++) {
+        int somaLinha = 0;
+        for (j = 0; j < 3; j++) {
+            somaLinha += matriz[i][j];
+        }
+        printf("Soma da linha %d: %d\n", i, somaLinha);
+    }
+    
+    // Soma das colunas
+    for (j = 0; j < 3; j++) {
+        int somaColuna = 0;
+        for (i = 0; i < 3; i++) {
+            somaColuna += matriz[i][j];
+        }
+        printf("Soma da coluna %d: %d\n", j, somaColuna);
+    }
+    
+    // Diagonal principal
+    int somaDiagonal = 0;
+    for (i = 0; i < 3; i++) {
+        somaDiagonal += matriz[i][i];
+    }
+    printf("Soma da diagonal principal: %d\n", somaDiagonal);
+    
+    return 0;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="simuladores">
+            <h2>Simuladores</h2>
+            <div class="content-section">
+                <p>Aqui você encontrará simuladores interativos para praticar os conceitos do Módulo I.</p>
+                
+                <h3>Exercícios Propostos do Curso</h3>
+                <div class="exercises-container">
+                    <div class="exercise-card">
+                        <h4>Exercício 1: Contador de Vogais</h4>
+                        <p>Escreva um programa que leia uma string e conte quantas vogais ela possui.</p>
+                        <button onclick="exerciseVowelCounter()" class="exercise-btn">Testar no Simulador</button>
+                    </div>
+                    
+                    <div class="exercise-card">
+                        <h4>Exercício 2: Busca de Substring</h4>
+                        <p>Implemente uma função que verifique se uma string é substring de outra.</p>
+                        <button onclick="exerciseSubstring()" class="exercise-btn">Testar no Simulador</button>
+                    </div>
+                    
+                    <div class="exercise-card">
+                        <h4>Exercício 3: Separação de Pares e Ímpares</h4>
+                        <p>Crie um programa que separe números pares e ímpares de um vetor.</p>
+                        <button onclick="exerciseEvenOdd()" class="exercise-btn">Testar no Simulador</button>
+                    </div>
+                    
+                    <div class="exercise-card">
+                        <h4>Exercício 4: Operações com Matriz 3x3</h4>
+                        <p>Desenvolva um programa que calcule somas de linhas, colunas e diagonais.</p>
+                        <button onclick="exerciseMatrix3x3()" class="exercise-btn">Testar no Simulador</button>
+                    </div>
+                </div>
+                
+                <h3>Exemplo Prático: Sistema de Notas</h3>
+                <div class="practical-system">
+                    <p>Baseado no desafio do curso, aqui está um sistema simplificado para cadastro de alunos e notas:</p>
+                    <div class="student-system">
+                        <div class="input-group">
+                            <label for="studentName">Nome do Aluno:</label>
+                            <input type="text" id="studentName" placeholder="Digite o nome do aluno">
+                        </div>
+                        <div class="input-group">
+                            <label for="studentGrade">Nota:</label>
+                            <input type="number" id="studentGrade" min="0" max="10" step="0.1" placeholder="Digite a nota (0-10)">
+                        </div>
+                        <div class="system-buttons">
+                            <button onclick="addStudent()">Cadastrar Aluno</button>
+                            <button onclick="calculateClassAverage()">Calcular Média da Turma</button>
+                            <button onclick="searchStudent()">Buscar Aluno</button>
+                            <button onclick="listStudents()">Listar Todos</button>
+                            <button onclick="clearStudents()" class="clear-btn">Limpar Lista</button>
+                        </div>
+                        <div id="studentSystemOutput" class="system-output"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="exemplos-codigo">
+            <h2>Exemplos de Código</h2>
+            <p>Exemplos de código em diferentes linguagens para os tópicos do Módulo I.</p>
+            <!-- Exemplos de Código gerais ou links para exemplos específicos -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Estrutura de Dados - Módulo I - William Mendes</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
