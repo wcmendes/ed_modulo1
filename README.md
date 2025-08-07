@@ -69,7 +69,7 @@ Estudantes do curso de Análise e Desenvolvimento de Sistemas, especialmente nas
 ## 🧠 Autor
 
 **Prof. William Mendes**  
-Diretor de Gestão de Tecnologia da Informação no IFMA e professor da Faculdade EDUFOR.
+Professor e Coordenador do curso de ADS da Faculdade EDUFOR.
 
 ---
 
