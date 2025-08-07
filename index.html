@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrutura de Dados - Módulo I - Prof. William Mendes</title>
+    <title>Estrutura de Dados - Módulo I</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Estrutura de Dados - Módulo I</h1>
-        <h2>Prof. William Mendes</h2>
-        <h3>Curso de Análise e Desenvolvimento de Sistemas - EDUFOR</h3>
         <nav>
             <ul>
                 <li><a href="#strings">Strings</a></li>
@@ -172,6 +170,32 @@ int main() {
     
     return 0;
 }</code></pre>
+                </div>
+            </div>
+            
+            <!-- Interactive String Playground -->
+            <div class="interactive-playground">
+                <h3>🎮 Playground Interativo - Strings</h3>
+                <div class="playground-controls">
+                    <div class="input-group">
+                        <label>Texto 1:</label>
+                        <input type="text" id="stringPlayground1" placeholder="Digite o primeiro texto" value="Estrutura">
+                    </div>
+                    <div class="input-group">
+                        <label>Texto 2:</label>
+                        <input type="text" id="stringPlayground2" placeholder="Digite o segundo texto" value="Dados">
+                    </div>
+                    <div class="playground-buttons">
+                        <button onclick="playgroundConcatenate()">Concatenar</button>
+                        <button onclick="playgroundLength()">Tamanho</button>
+                        <button onclick="playgroundUppercase()">MAIÚSCULA</button>
+                        <button onclick="playgroundLowercase()">minúscula</button>
+                        <button onclick="playgroundReverse()">Inverter</button>
+                        <button onclick="playgroundSubstring()">Substring (0-5)</button>
+                        <button onclick="playgroundSearch()">Buscar "a"</button>
+                        <button onclick="playgroundVowelCount()">Contar Vogais</button>
+                    </div>
+                    <div id="playgroundStringResult" class="playground-result"></div>
                 </div>
             </div>
         </section>
@@ -364,6 +388,36 @@ int main() {
     
     return 0;
 }</code></pre>
+                </div>
+            </div>
+            
+            <!-- Interactive Vector Playground -->
+            <div class="interactive-playground">
+                <h3>🎮 Playground Interativo - Vetores</h3>
+                <div class="playground-controls">
+                    <div class="input-group">
+                        <label>Vetor atual:</label>
+                        <div id="vectorDisplay" class="vector-display">[10, 20, 30, 40, 50]</div>
+                    </div>
+                    <div class="input-group">
+                        <label>Novo elemento:</label>
+                        <input type="number" id="vectorNewElement" placeholder="Digite um número" value="60">
+                    </div>
+                    <div class="input-group">
+                        <label>Posição (índice):</label>
+                        <input type="number" id="vectorPosition" placeholder="Posição (0-n)" value="2" min="0">
+                    </div>
+                    <div class="playground-buttons">
+                        <button onclick="vectorInsertEnd()">Inserir no Final</button>
+                        <button onclick="vectorInsertPosition()">Inserir na Posição</button>
+                        <button onclick="vectorRemovePosition()">Remover da Posição</button>
+                        <button onclick="vectorSearch()">Buscar Elemento</button>
+                        <button onclick="vectorSort()">Ordenar</button>
+                        <button onclick="vectorReverse()">Inverter</button>
+                        <button onclick="vectorSum()">Somar Todos</button>
+                        <button onclick="vectorReset()">Resetar</button>
+                    </div>
+                    <div id="playgroundVectorResult" class="playground-result"></div>
                 </div>
             </div>
         </section>
@@ -633,6 +687,44 @@ int main() {
 }</code></pre>
                 </div>
             </div>
+            
+            <!-- Interactive Matrix Playground -->
+            <div class="interactive-playground">
+                <h3>🎮 Playground Interativo - Matrizes</h3>
+                <div class="playground-controls">
+                    <div class="input-group">
+                        <label>Matriz atual (3x3):</label>
+                        <div id="matrixDisplay" class="matrix-display">
+                            <div class="matrix-row">
+                                <input type="number" id="m00" value="1" onchange="updateMatrix()">
+                                <input type="number" id="m01" value="2" onchange="updateMatrix()">
+                                <input type="number" id="m02" value="3" onchange="updateMatrix()">
+                            </div>
+                            <div class="matrix-row">
+                                <input type="number" id="m10" value="4" onchange="updateMatrix()">
+                                <input type="number" id="m11" value="5" onchange="updateMatrix()">
+                                <input type="number" id="m12" value="6" onchange="updateMatrix()">
+                            </div>
+                            <div class="matrix-row">
+                                <input type="number" id="m20" value="7" onchange="updateMatrix()">
+                                <input type="number" id="m21" value="8" onchange="updateMatrix()">
+                                <input type="number" id="m22" value="9" onchange="updateMatrix()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playground-buttons">
+                        <button onclick="matrixSumTotal()">Soma Total</button>
+                        <button onclick="matrixSumRows()">Soma das Linhas</button>
+                        <button onclick="matrixSumColumns()">Soma das Colunas</button>
+                        <button onclick="matrixDiagonalPrincipal()">Diagonal Principal</button>
+                        <button onclick="matrixDiagonalSecundaria()">Diagonal Secundária</button>
+                        <button onclick="matrixTranspose()">Transpor</button>
+                        <button onclick="matrixReset()">Resetar</button>
+                        <button onclick="matrixRandomFill()">Preencher Aleatório</button>
+                    </div>
+                    <div id="playgroundMatrixResult" class="playground-result"></div>
+                </div>
+            </div>
         </section>
 
         <section id="simuladores">
@@ -700,7 +792,7 @@ int main() {
     </main>
 
     <footer>
-        <p>&copy; 2025 Estrutura de Dados - Módulo I - William Mendes</p>
+        <p>&copy; 2025 Estrutura de Dados - Módulo I</p>
     </footer>
 
     <script src="script.js"></script>

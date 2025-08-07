@@ -411,3 +411,290 @@ function clearStudents() {
     }
 }
 
+
+// Interactive Playground Functions
+
+// String Playground Functions
+function playgroundConcatenate() {
+    const text1 = document.getElementById('stringPlayground1').value;
+    const text2 = document.getElementById('stringPlayground2').value;
+    const result = text1 + text2;
+    updatePlaygroundResult('playgroundStringResult', `Concatenação: "${result}"`);
+}
+
+function playgroundLength() {
+    const text1 = document.getElementById('stringPlayground1').value;
+    const text2 = document.getElementById('stringPlayground2').value;
+    updatePlaygroundResult('playgroundStringResult', 
+        `Tamanho do Texto 1: ${text1.length}\nTamanho do Texto 2: ${text2.length}`);
+}
+
+function playgroundUppercase() {
+    const text1 = document.getElementById('stringPlayground1').value;
+    const text2 = document.getElementById('stringPlayground2').value;
+    updatePlaygroundResult('playgroundStringResult', 
+        `Texto 1 em maiúscula: "${text1.toUpperCase()}"\nTexto 2 em maiúscula: "${text2.toUpperCase()}"`);
+}
+
+function playgroundLowercase() {
+    const text1 = document.getElementById('stringPlayground1').value;
+    const text2 = document.getElementById('stringPlayground2').value;
+    updatePlaygroundResult('playgroundStringResult', 
+        `Texto 1 em minúscula: "${text1.toLowerCase()}"\nTexto 2 em minúscula: "${text2.toLowerCase()}"`);
+}
+
+function playgroundReverse() {
+    const text1 = document.getElementById('stringPlayground1').value;
+    const text2 = document.getElementById('stringPlayground2').value;
+    const reversed1 = text1.split('').reverse().join('');
+    const reversed2 = text2.split('').reverse().join('');
+    updatePlaygroundResult('playgroundStringResult', 
+        `Texto 1 invertido: "${reversed1}"\nTexto 2 invertido: "${reversed2}"`);
+}
+
+function playgroundSubstring() {
+    const text1 = document.getElementById('stringPlayground1').value;
+    const substring = text1.substring(0, 5);
+    updatePlaygroundResult('playgroundStringResult', 
+        `Substring (0-5) do Texto 1: "${substring}"`);
+}
+
+function playgroundSearch() {
+    const text1 = document.getElementById('stringPlayground1').value;
+    const text2 = document.getElementById('stringPlayground2').value;
+    const positions1 = [];
+    const positions2 = [];
+    
+    for (let i = 0; i < text1.length; i++) {
+        if (text1[i].toLowerCase() === 'a') positions1.push(i);
+    }
+    for (let i = 0; i < text2.length; i++) {
+        if (text2[i].toLowerCase() === 'a') positions2.push(i);
+    }
+    
+    updatePlaygroundResult('playgroundStringResult', 
+        `Posições da letra "a" no Texto 1: [${positions1.join(', ')}]\nPosições da letra "a" no Texto 2: [${positions2.join(', ')}]`);
+}
+
+function playgroundVowelCount() {
+    const text1 = document.getElementById('stringPlayground1').value;
+    const text2 = document.getElementById('stringPlayground2').value;
+    const vowels = 'aeiouAEIOU';
+    
+    const count1 = text1.split('').filter(char => vowels.includes(char)).length;
+    const count2 = text2.split('').filter(char => vowels.includes(char)).length;
+    
+    updatePlaygroundResult('playgroundStringResult', 
+        `Vogais no Texto 1: ${count1}\nVogais no Texto 2: ${count2}`);
+}
+
+// Vector Playground Functions
+let currentVector = [10, 20, 30, 40, 50];
+
+function updateVectorDisplay() {
+    document.getElementById('vectorDisplay').textContent = `[${currentVector.join(', ')}]`;
+}
+
+function vectorInsertEnd() {
+    const newElement = parseInt(document.getElementById('vectorNewElement').value);
+    if (!isNaN(newElement)) {
+        currentVector.push(newElement);
+        updateVectorDisplay();
+        updatePlaygroundResult('playgroundVectorResult', 
+            `Elemento ${newElement} inserido no final.\nVetor atual: [${currentVector.join(', ')}]`);
+    }
+}
+
+function vectorInsertPosition() {
+    const newElement = parseInt(document.getElementById('vectorNewElement').value);
+    const position = parseInt(document.getElementById('vectorPosition').value);
+    
+    if (!isNaN(newElement) && !isNaN(position) && position >= 0 && position <= currentVector.length) {
+        currentVector.splice(position, 0, newElement);
+        updateVectorDisplay();
+        updatePlaygroundResult('playgroundVectorResult', 
+            `Elemento ${newElement} inserido na posição ${position}.\nVetor atual: [${currentVector.join(', ')}]`);
+    } else {
+        updatePlaygroundResult('playgroundVectorResult', 'Posição inválida ou elemento inválido!');
+    }
+}
+
+function vectorRemovePosition() {
+    const position = parseInt(document.getElementById('vectorPosition').value);
+    
+    if (!isNaN(position) && position >= 0 && position < currentVector.length) {
+        const removedElement = currentVector.splice(position, 1)[0];
+        updateVectorDisplay();
+        updatePlaygroundResult('playgroundVectorResult', 
+            `Elemento ${removedElement} removido da posição ${position}.\nVetor atual: [${currentVector.join(', ')}]`);
+    } else {
+        updatePlaygroundResult('playgroundVectorResult', 'Posição inválida!');
+    }
+}
+
+function vectorSearch() {
+    const element = parseInt(document.getElementById('vectorNewElement').value);
+    if (!isNaN(element)) {
+        const index = currentVector.indexOf(element);
+        if (index !== -1) {
+            updatePlaygroundResult('playgroundVectorResult', 
+                `Elemento ${element} encontrado na posição ${index}.`);
+        } else {
+            updatePlaygroundResult('playgroundVectorResult', 
+                `Elemento ${element} não encontrado no vetor.`);
+        }
+    }
+}
+
+function vectorSort() {
+    const sortedVector = [...currentVector].sort((a, b) => a - b);
+    currentVector = sortedVector;
+    updateVectorDisplay();
+    updatePlaygroundResult('playgroundVectorResult', 
+        `Vetor ordenado: [${currentVector.join(', ')}]`);
+}
+
+function vectorReverse() {
+    currentVector.reverse();
+    updateVectorDisplay();
+    updatePlaygroundResult('playgroundVectorResult', 
+        `Vetor invertido: [${currentVector.join(', ')}]`);
+}
+
+function vectorSum() {
+    const sum = currentVector.reduce((acc, val) => acc + val, 0);
+    const average = sum / currentVector.length;
+    updatePlaygroundResult('playgroundVectorResult', 
+        `Soma total: ${sum}\nMédia: ${average.toFixed(2)}\nQuantidade de elementos: ${currentVector.length}`);
+}
+
+function vectorReset() {
+    currentVector = [10, 20, 30, 40, 50];
+    updateVectorDisplay();
+    updatePlaygroundResult('playgroundVectorResult', 'Vetor resetado para valores iniciais.');
+}
+
+// Matrix Playground Functions
+function getMatrixValues() {
+    const matrix = [];
+    for (let i = 0; i < 3; i++) {
+        matrix[i] = [];
+        for (let j = 0; j < 3; j++) {
+            matrix[i][j] = parseInt(document.getElementById(`m${i}${j}`).value) || 0;
+        }
+    }
+    return matrix;
+}
+
+function updateMatrix() {
+    // This function is called when matrix values change
+    // We can add real-time updates here if needed
+}
+
+function matrixSumTotal() {
+    const matrix = getMatrixValues();
+    let sum = 0;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            sum += matrix[i][j];
+        }
+    }
+    updatePlaygroundResult('playgroundMatrixResult', `Soma total da matriz: ${sum}`);
+}
+
+function matrixSumRows() {
+    const matrix = getMatrixValues();
+    let result = 'Soma das linhas:\n';
+    for (let i = 0; i < 3; i++) {
+        let rowSum = 0;
+        for (let j = 0; j < 3; j++) {
+            rowSum += matrix[i][j];
+        }
+        result += `Linha ${i}: ${rowSum}\n`;
+    }
+    updatePlaygroundResult('playgroundMatrixResult', result);
+}
+
+function matrixSumColumns() {
+    const matrix = getMatrixValues();
+    let result = 'Soma das colunas:\n';
+    for (let j = 0; j < 3; j++) {
+        let colSum = 0;
+        for (let i = 0; i < 3; i++) {
+            colSum += matrix[i][j];
+        }
+        result += `Coluna ${j}: ${colSum}\n`;
+    }
+    updatePlaygroundResult('playgroundMatrixResult', result);
+}
+
+function matrixDiagonalPrincipal() {
+    const matrix = getMatrixValues();
+    let sum = 0;
+    let elements = [];
+    for (let i = 0; i < 3; i++) {
+        sum += matrix[i][i];
+        elements.push(matrix[i][i]);
+    }
+    updatePlaygroundResult('playgroundMatrixResult', 
+        `Diagonal principal: [${elements.join(', ')}]\nSoma: ${sum}`);
+}
+
+function matrixDiagonalSecundaria() {
+    const matrix = getMatrixValues();
+    let sum = 0;
+    let elements = [];
+    for (let i = 0; i < 3; i++) {
+        sum += matrix[i][2-i];
+        elements.push(matrix[i][2-i]);
+    }
+    updatePlaygroundResult('playgroundMatrixResult', 
+        `Diagonal secundária: [${elements.join(', ')}]\nSoma: ${sum}`);
+}
+
+function matrixTranspose() {
+    const matrix = getMatrixValues();
+    let result = 'Matriz transposta:\n';
+    for (let j = 0; j < 3; j++) {
+        let row = [];
+        for (let i = 0; i < 3; i++) {
+            row.push(matrix[i][j]);
+        }
+        result += `[${row.join(', ')}]\n`;
+    }
+    updatePlaygroundResult('playgroundMatrixResult', result);
+}
+
+function matrixReset() {
+    const defaultValues = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
+    
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            document.getElementById(`m${i}${j}`).value = defaultValues[i][j];
+        }
+    }
+    updatePlaygroundResult('playgroundMatrixResult', 'Matriz resetada para valores padrão.');
+}
+
+function matrixRandomFill() {
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            const randomValue = Math.floor(Math.random() * 20) + 1;
+            document.getElementById(`m${i}${j}`).value = randomValue;
+        }
+    }
+    updatePlaygroundResult('playgroundMatrixResult', 'Matriz preenchida com valores aleatórios (1-20).');
+}
+
+// Utility function to update playground results with animation
+function updatePlaygroundResult(elementId, text) {
+    const element = document.getElementById(elementId);
+    element.textContent = text;
+    element.classList.remove('updated');
+    setTimeout(() => element.classList.add('updated'), 10);
+}
+
