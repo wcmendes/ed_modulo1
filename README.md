@@ -1,4 +1,4 @@
-# 📘 Estrutura de Dados - Módulo I
+# Estrutura de Dados - Módulo I: Strings, Vetores e Matrizes
 
 Projeto interativo de apoio à disciplina **Estrutura de Dados - Módulo I**, desenvolvido pelo Prof. **Prof. William Corrêa Mendes**.
 
@@ -11,8 +11,6 @@ Oferecer aos alunos uma interface prática e visual para aprendizado dos princip
 - Matrizes (arrays bidimensionais)
 
 O projeto conta com explicações teóricas, exemplos em diversas linguagens (Portugol, Python, Java e C), simuladores interativos e um playground de experimentação para cada estrutura.
-
----
 
 ## 🧩 Funcionalidades
 
@@ -41,33 +39,30 @@ O projeto conta com explicações teóricas, exemplos em diversas linguagens (Po
   - Transposição de matriz
 - Playground visual interativo (3x3)
 
----
-
 ## 🛠️ Tecnologias Utilizadas
 
 - HTML5
 - CSS3 (com design responsivo e moderno)
 - JavaScript Puro (sem bibliotecas externas)
 
----
-
-## 🧪 Como Executar
+## 🚀 Como Acessar/Executar
 
 1. Clone ou baixe este repositório.
 2. Abra o arquivo `index.html` em um navegador moderno.
 3. Navegue entre as seções usando o menu.
 4. Interaja com os simuladores e exemplos interativos.
 
----
-
 ## 🎓 Público-Alvo
 
 Estudantes do curso de Análise e Desenvolvimento de Sistemas, especialmente nas fases introdutórias de estrutura de dados e lógica de programação.
 
-### 📄 Licença
+## 🤝 Contribuições
 
-Material educacional desenvolvido para fins acadêmicos.  
-É permitida a reprodução, adaptação e distribuição, desde que seja **dado o devido crédito ao autor**.
+Este projeto foi desenvolvido como material educacional para a disciplina de Estrutura de Dados. Sugestões e melhorias são sempre bem-vindas.
+
+## 📄 Licença e Uso
+
+Este material educacional é desenvolvido para fins acadêmicos. É permitida a reprodução, adaptação e distribuição, desde que seja **dado o devido crédito ao autor**.
 
 ---
 
@@ -77,9 +72,9 @@ Material educacional desenvolvido para fins acadêmicos.
 
 ---
 
-### 🔗 Links Relacionados
+### 🔗 Links dos Repositórios
 
-- [Módulo I - Estruturas Básicas](https://wcmendes.github.io/ed_modulo1/)
-- [Módulo II - Registros e Vetores](https://wcmendes.github.io/ed_modulo2/)
-- [Módulo III - Estruturas Lineares](https://wcmendes.github.io/ed_modulo3/)
-
+- [Módulo I - Estruturas Básicas](https://github.com/wcmendes/ed_modulo1)
+- [Módulo II - Registros e Vetores](https://github.com/wcmendes/ed_modulo2)
+- [Módulo III - Estruturas Lineares](https://github.com/wcmendes/ed_modulo3)
+- [Torre de Hanoi](https://github.com/wcmendes/hanoi)
