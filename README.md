@@ -47,7 +47,7 @@ O projeto conta com explicações teóricas, exemplos em diversas linguagens (Po
 
 ## 🚀 Como Acessar/Executar
 
-1. **Acesse o simulador**: [https://wcmendes.github.io/ed_modulo3/](https://wcmendes.github.io/ed_modulo3/)
+1. **Acesse o simulador**: [https://wcmendes.github.io/ed_modulo1/](https://wcmendes.github.io/ed_modulo1/)
 2. Navegue entre as seções usando o menu.
 3. Interaja com os simuladores e exemplos interativos.
 
