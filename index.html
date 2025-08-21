@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrutura de Dados - Módulo I - Prof. William Mendes</title>
+    <title>Simulador de Estrutura de Dados - Strings, Vetores e Matrizes - Prof. William Mendes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Estrutura de Dados - Módulo I</h1>
         <h2>Prof. William Mendes</h2>
-        <h3>Curso de Análise e Desenvolvimento de Sistemas - EDUFOR</h3>
+        
         <nav>
             <ul>
                 <li><a href="#strings">Strings</a></li>
                 <li><a href="#vetores">Vetores</a></li>
                 <li><a href="#matrizes">Matrizes</a></li>
+                <li><a href="#simuladores">Simuladores</a></li>
+                <li><a href="#exemplos-codigo">Exemplos de Código</a></li>
             </ul>
         </nav>
     </header>
@@ -285,9 +287,9 @@ var
     soma: real
     i: inteiro
 inicio
-    // Lendo as notas
+    // Lendo as notas (índices de 0 a 4)
     para i de 0 ate 4 faca
-        escreva("Digite a nota ", i+1, ": ")
+        escreva("Digite a nota do índice ", i, ": ")
         leia(notas[i])
     fimpara
     
@@ -298,6 +300,11 @@ inicio
     fimpara
     
     escreva("Média: ", soma/5)
+    
+    // Mostrando elementos com seus índices
+    para i de 0 ate 4 faca
+        escreva("notas[", i, "] = ", notas[i])
+    fimpara
 fimalgoritmo</code></pre>
                 </div>
                 <div id="vetores-python" class="code-tab">
@@ -514,7 +521,7 @@ var
     i, j: inteiro
     soma: inteiro
 inicio
-    // Preenchendo a matriz
+    // Preenchendo a matriz (índices de 0 a 2)
     para i de 0 ate 2 faca
         para j de 0 ate 2 faca
             escreva("Digite o elemento [", i, "][", j, "]: ")
@@ -531,6 +538,13 @@ inicio
     fimpara
     
     escreva("Soma total: ", soma)
+    
+    // Mostrando elementos com seus índices
+    para i de 0 ate 2 faca
+        para j de 0 ate 2 faca
+            escreva("matriz[", i, "][", j, "] = ", matriz[i, j])
+        fimpara
+    fimpara
 fimalgoritmo</code></pre>
                 </div>
                 <div id="matrizes-python" class="code-tab">
@@ -757,6 +771,7 @@ int main() {
 
     <footer>
         <p>&copy; 2025 Estrutura de Dados - Módulo I - William Mendes</p>
+        <br>Material educacional desenvolvido para fins acadêmicos. É permitida a reprodução, adaptação e distribuição, desde que seja <b>*dado o devido crédito ao autor</b>. </br> 
     </footer>
 
     <script src="script.js"></script>

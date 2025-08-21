@@ -66,7 +66,8 @@ Estudantes do curso de Análise e Desenvolvimento de Sistemas, especialmente nas
 
 ### 📄 Licença
 
-Material educacional desenvolvido para fins acadêmicos.
+Material educacional desenvolvido para fins acadêmicos.  
+É permitida a reprodução, adaptação e distribuição, desde que seja **dado o devido crédito ao autor**.
 
 ---
 

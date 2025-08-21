@@ -82,17 +82,26 @@ function runVectorSimulator() {
         // Informações básicas do vetor
         results.push(`<strong>Vetor:</strong> [${numbers.join(', ')}]`);
         results.push(`<strong>Tamanho:</strong> ${numbers.length} elementos`);
+        results.push(`<strong>Índices:</strong> 0 a ${numbers.length - 1}`);
         
-        // Estatísticas
+        // Estatísticas com índices baseados em 0
         const soma = numbers.reduce((acc, num) => acc + num, 0);
         const media = soma / numbers.length;
         const maior = Math.max(...numbers);
         const menor = Math.min(...numbers);
+        const indiceMaior = numbers.indexOf(maior);
+        const indiceMenor = numbers.indexOf(menor);
         
         results.push(`<strong>Soma:</strong> ${soma}`);
         results.push(`<strong>Média:</strong> ${media.toFixed(2)}`);
-        results.push(`<strong>Maior elemento:</strong> ${maior}`);
-        results.push(`<strong>Menor elemento:</strong> ${menor}`);
+        results.push(`<strong>Maior elemento:</strong> ${maior} (índice ${indiceMaior})`);
+        results.push(`<strong>Menor elemento:</strong> ${menor} (índice ${indiceMenor})`);
+        
+        // Mostrar elementos com índices
+        results.push(`<strong>Elementos por índice:</strong>`);
+        numbers.forEach((num, index) => {
+            results.push(`  vetor[${index}] = ${num}`);
+        });
         
         // Ordenação
         const crescente = [...numbers].sort((a, b) => a - b);
@@ -152,6 +161,15 @@ function runMatrixSimulator() {
         results.push(`<strong>Matriz ${numRows}x${numCols}:</strong>`);
         matrix.forEach((row, i) => {
             results.push(`Linha ${i}: [${row.join(', ')}]`);
+        });
+        results.push(`<strong>Índices:</strong> [0..${numRows-1}][0..${numCols-1}]`);
+        
+        // Mostrar elementos com índices
+        results.push(`<strong>Elementos por índice:</strong>`);
+        matrix.forEach((row, i) => {
+            row.forEach((element, j) => {
+                results.push(`  matriz[${i}][${j}] = ${element}`);
+            });
         });
         
         // Soma total
