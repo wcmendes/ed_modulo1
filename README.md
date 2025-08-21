@@ -1,6 +1,6 @@
 # 📘 Estrutura de Dados - Módulo I
 
-Projeto interativo de apoio à disciplina **Estrutura de Dados - Módulo I**, desenvolvido pelo Prof. William Mendes para o curso de Análise e Desenvolvimento de Sistemas da Faculdade EDUFOR.
+Projeto interativo de apoio à disciplina **Estrutura de Dados - Módulo I**, desenvolvido pelo Prof. **Prof. William Corrêa Mendes**.
 
 ## 📌 Objetivo
 
@@ -68,8 +68,12 @@ Estudantes do curso de Análise e Desenvolvimento de Sistemas, especialmente nas
 
 ## 🧠 Autor
 
-**Prof. William Mendes**  
+**Prof. William Corrêa Mendes**  
 Professor e Coordenador do curso de ADS da Faculdade EDUFOR.
+
+ --> 
+
+. **Currículo Lattes**: [https://lattes.cnpq.br/7726054867638395](https://lattes.cnpq.br/7726054867638395)
 
 ---
 
