@@ -47,10 +47,9 @@ O projeto conta com explicações teóricas, exemplos em diversas linguagens (Po
 
 ## 🚀 Como Acessar/Executar
 
-1. Clone ou baixe este repositório.
-2. Abra o arquivo `index.html` em um navegador moderno.
-3. Navegue entre as seções usando o menu.
-4. Interaja com os simuladores e exemplos interativos.
+1. **Acesse o simulador**: [https://wcmendes.github.io/ed_modulo3/](https://wcmendes.github.io/ed_modulo3/)
+2. Navegue entre as seções usando o menu.
+3. Interaja com os simuladores e exemplos interativos.
 
 ## 🎓 Público-Alvo
 
